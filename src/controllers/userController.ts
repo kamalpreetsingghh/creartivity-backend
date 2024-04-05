@@ -24,10 +24,7 @@ export const signUp = async (request: Request, response: Response) => {
 
       const savedUser = await user.save();
 
-      return response.status(200).json({
-        message: "User created successfully",
-        savedUser,
-      });
+      return response.status(200).json(savedUser);
     } else {
       return response.status(clerkResponse.result.status).json({
         message: clerkResponse.result.message,
@@ -35,7 +32,7 @@ export const signUp = async (request: Request, response: Response) => {
     }
   } catch (error: any) {
     console.log(error);
-    return response.status(500).json({ error: error.msg });
+    return response.status(500).json({ message: error.msg });
   }
 };
 
@@ -49,9 +46,7 @@ export const signIn = async (request: Request, response: Response) => {
       const clerkResponse = await signinClerk(user.clerkId, password);
 
       if (clerkResponse.verified) {
-        return response
-          .status(200)
-          .json({ message: "Signed in successfully", user });
+        return response.status(200).json(user);
       } else {
         return response
           .status(401)
