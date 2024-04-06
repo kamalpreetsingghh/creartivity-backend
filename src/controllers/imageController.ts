@@ -24,7 +24,11 @@ export const getImagesIds = async (request: Request, response: Response) => {
     const res = await getImages();
     if (res.images) {
       const imagesIds: any[] = res.images.map(
-        (image: IImage): ImageId => ({ id: image._id })
+        (image: IImage): ImageId => ({
+          id: image._id,
+          title: image.title,
+          secureURL: image.secureURL,
+        })
       );
 
       return response.status(200).json(imagesIds);

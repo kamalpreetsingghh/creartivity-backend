@@ -33,5 +33,7 @@ export type ImagesResponse = {
 };
 
 export type ImageId = {
-  id: String;
+  id: string;
+  title: string;
+  secureURL: string;
 };
