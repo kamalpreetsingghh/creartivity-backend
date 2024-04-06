@@ -10,6 +10,7 @@ const app: Express = express();
 app.use(express.json());
 
 app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/images", require("./routes/imageRoutes"));
 
 const port = process.env.PORT || 5000;
 

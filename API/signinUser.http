@@ -1,7 +1,7 @@
-POST https://creartivity-backend.onrender.com/api/users/signin
+POST https://creartivity.onrender.com/api/users/signin
 Content-Type: application/json
 
 {
-    "email": "kamalpreetsingh@gmail.com",
-    "password": "kamalpreet1122"
+    "email": "kamalpreetsingghh@gmail.com",
+    "password": "Music@life123"
 }

@@ -1,4 +1,4 @@
-export type UserInfo = {
+export type User = {
   clerkId: string;
   email: string;
   username: string;
@@ -16,13 +16,8 @@ export type CreateUser = {
 };
 
 export type CreateClerkUserResponse = {
-  user: UserInfo | null;
+  user: User | null;
   result: { status: number; message: string };
-};
-
-export type ClerkSignInResponse = {
-  user: UserInfo | null;
-  verified: boolean;
 };
 
 export type ClerkError = {
@@ -30,4 +25,9 @@ export type ClerkError = {
   message: string;
   longMessage: string;
   meta: object;
+};
+
+export type ImagesResponse = {
+  images: any;
+  result: { status: number; message: string };
 };

@@ -43,9 +43,9 @@ export const signIn = async (request: Request, response: Response) => {
     const user = await User.findOne({ email: email }).exec();
 
     if (user) {
-      const clerkResponse = await signinClerk(user.clerkId, password);
+      const isVerified = await signinClerk(user.clerkId, password);
 
-      if (clerkResponse.verified) {
+      if (isVerified) {
         return response.status(200).json(user);
       } else {
         return response

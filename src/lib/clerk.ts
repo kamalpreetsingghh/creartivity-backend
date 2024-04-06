@@ -1,7 +1,6 @@
 import clerkClient from "@clerk/clerk-sdk-node";
 import {
   ClerkError,
-  ClerkSignInResponse,
   CreateClerkUserResponse,
   CreateUser,
 } from "../common.types";
@@ -84,15 +83,15 @@ export const signupClerk = async ({
 export const signinClerk = async (
   userId: string,
   password: string
-): Promise<ClerkSignInResponse> => {
+): Promise<Boolean> => {
   try {
     const result = await clerkClient.users.verifyPassword({
       userId,
       password,
     });
 
-    return { user: null, verified: result.verified };
+    return result.verified;
   } catch (error) {
-    return { user: null, verified: false };
+    return false;
   }
 };

@@ -1,10 +1,10 @@
-POST http://localhost:5001/api/users/signup
+POST https://creartivity.onrender.com/api/users/signup
 Content-Type: application/json
 
 {
     "firstName": "Kamal Preet",
     "lastName": "Singh",
     "userName": "itachii",
-    "email": "kamalpreetsingh@gmail.com",
-    "password": "kamalpreet1122"
+    "email": "kamalpreetsingghh@gmail.com",
+    "password": "Music@life123"
 }
