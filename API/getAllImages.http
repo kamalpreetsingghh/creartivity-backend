@@ -1,2 +1,2 @@
-GET http://localhost:5001/api/images/
+GET http://localhost:5001/api/images/ids
 Content-Type: application/json

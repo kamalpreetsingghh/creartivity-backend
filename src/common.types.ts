@@ -31,3 +31,7 @@ export type ImagesResponse = {
   images: any;
   result: { status: number; message: string };
 };
+
+export type ImageId = {
+  id: String;
+};
