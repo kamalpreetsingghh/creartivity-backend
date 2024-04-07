@@ -3,7 +3,10 @@ import Image from "../models/imageModel";
 import User from "../models/userModel";
 import { ImagesResponse } from "../common.types";
 
-export const getImages = async (searchQuery = ""): Promise<ImagesResponse> => {
+export const getImages = async (
+  searchQuery: string = ""
+): Promise<ImagesResponse> => {
+  console.log(searchQuery);
   try {
     cloudinary.config({
       cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,

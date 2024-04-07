@@ -1,4 +1,5 @@
 import { Request, Response, response } from "express";
+
 import { getImages } from "../lib/cloudinary";
 import { IImage } from "../models/imageModel";
 import { ImageId } from "../common.types";
@@ -21,7 +22,11 @@ export const getAllImages = async (request: Request, response: Response) => {
 
 export const getImagesIds = async (request: Request, response: Response) => {
   try {
-    const res = await getImages();
+    let searchQuery = request.query.searchQuery
+      ? (request.query.searchQuery as string)
+      : "";
+
+    const res = await getImages(searchQuery);
     if (res.images) {
       const imagesIds: any[] = res.images.map(
         (image: IImage): ImageId => ({
